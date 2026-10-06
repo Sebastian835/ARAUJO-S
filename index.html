@@ -1,1 +1,693 @@
-HOLA MUNDO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Araujo's Cleaning Services LLC — Professional Cleaning in Every Detail</title>
+<meta name="description" content="Araujo's Cleaning Services LLC — residential and commercial cleaning in Denver, CO. Detail-oriented, dependable, and professional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13305C;
+    --navy-deep:#0C2142;
+    --sky:#3FC5F0;
+    --sky-deep:#17A8DD;
+    --sky-pale:#E7F8FD;
+    --mint:#6FE0C9;
+    --paper:#FFFFFF;
+    --paper-dim:#F3FBFD;
+    --ink:#16233B;
+    --line: rgba(19,48,92,0.12);
+    --wrap: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 32px;}
+  h1,h2,h3{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    line-height:1.08;
+    margin:0;
+    color:var(--navy);
+  }
+  .script{ font-family:'Caveat',cursive; font-weight:700; }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--sky-deep);
+    margin-bottom:16px;
+  }
+  .eyebrow .spark{ font-size:14px; color:var(--sky); }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:14px 26px;
+    font-family:'Inter',sans-serif;
+    font-size:14.5px;
+    font-weight:700;
+    text-decoration:none;
+    border-radius:999px;
+    border:2px solid transparent;
+    transition:transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-sky{ background:linear-gradient(135deg, var(--sky), var(--sky-deep)); color:var(--white, #fff); box-shadow:0 10px 24px -10px rgba(23,168,221,0.6); }
+  .btn-sky:hover{ background:linear-gradient(135deg, var(--sky-deep), var(--navy)); }
+  .btn-outline{ background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-outline:hover{ background:var(--navy); color:#fff; }
+  .btn-outline-light{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.6); }
+  .btn-outline-light:hover{ background:#fff; color:var(--navy); }
+  .btn-white{ background:#fff; color:var(--navy); }
+  .btn-white:hover{ background:var(--sky-pale); }
+
+  /* ============ NAV ============ */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 32px; max-width:var(--wrap); margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .brand-logo-tag{
+    /* placeholder slot reserved for the company logo mark */
+    width:40px; height:48px; flex:0 0 auto;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .brand-logo-tag img{ width:100%; height:100%; object-fit:contain; }
+  .brand-word{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:19px;
+    line-height:1.1;
+    color:var(--navy);
+    display:flex;
+    flex-direction:column;
+  }
+  .brand-word span.sub{
+    font-family:'Inter',sans-serif;
+    font-size:9.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sky-deep);
+    font-weight:700;
+    margin-top:2px;
+  }
+  nav.links{ display:flex; gap:28px; align-items:center; }
+  nav.links a{ text-decoration:none; font-size:14px; font-weight:600; color:#3A4A63; }
+  nav.links a:hover{ color:var(--sky-deep); }
+  .nav-cta{ display:flex; align-items:center; gap:10px; }
+
+  /* ============ HERO ============ */
+  .hero{ padding:148px 0 90px; position:relative; overflow:hidden; background:var(--paper-dim); }
+  .blob{ position:absolute; border-radius:50%; z-index:0; }
+  .blob-1{ width:380px; height:380px; background:var(--navy); opacity:.9; top:-140px; left:-120px; border-radius:42% 58% 65% 35% / 45% 40% 60% 55%; }
+  .blob-2{ width:220px; height:220px; background:var(--sky); top:-30px; left:120px; border-radius:60% 40% 55% 45% / 45% 55% 45% 55%; }
+  .blob-3{ width:300px; height:300px; background:var(--navy); opacity:.08; bottom:-120px; right:-100px; border-radius:50%; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;
+    position:relative; z-index:1;
+  }
+  h1.hero-h{ font-size:clamp(38px,5vw,58px); max-width:12ch; }
+  h1.hero-h .accent{ color:var(--sky-deep); }
+  .hero-sub{
+    font-size:16.5px; line-height:1.7; color:#4A5873;
+    max-width:460px; margin:22px 0 32px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:30px; }
+  .hero-meta{
+    display:flex; gap:26px; flex-wrap:wrap;
+    font-size:12.5px; color:#5A6B86; font-weight:600;
+  }
+  .hero-meta strong{ color:var(--navy); }
+
+  .hero-photo-wrap{ position:relative; }
+  .blob-mask{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    clip-path: path("M 420 20 C 540 10, 620 100, 610 220 C 600 340, 520 380, 420 420 C 300 460, 140 460, 60 360 C -20 260, 10 100, 120 40 C 220 -15, 320 30, 420 20 Z");
+  }
+  .sparkle-badge{
+    position:absolute;
+    top:-18px; right:10px;
+    width:92px; height:92px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--sky), var(--sky-deep));
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    box-shadow:0 14px 30px -10px rgba(23,168,221,0.55);
+    z-index:2;
+  }
+  .sparkle-badge .sb-inner{ font-family:'Baloo 2',sans-serif; color:#fff; line-height:1.1; }
+  .sparkle-badge .sb-ic{ font-size:22px; display:block; }
+  .sparkle-badge .sb-txt{ font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; display:block; margin-top:2px; }
+
+  /* ============ SECTION SCAFFOLDING ============ */
+  .section-pad{ padding:96px 0; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:40px; margin-bottom:50px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(30px,4vw,44px); }
+  .section-head .lede{ max-width:400px; font-size:15px; line-height:1.65; color:#5A6B86; padding-bottom:4px; }
+
+  /* ---------- value strip ---------- */
+  .value-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .value-card{
+    background:var(--paper-dim);
+    border-radius:22px;
+    padding:30px 26px;
+    position:relative;
+  }
+  .value-card .v-ic{
+    width:48px; height:48px; border-radius:14px;
+    background:linear-gradient(135deg, var(--sky), var(--sky-deep));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:20px; margin-bottom:18px;
+  }
+  .value-card h3{ font-size:20px; margin-bottom:8px; }
+  .value-card p{ font-size:14px; line-height:1.6; color:#4A5873; margin:0; }
+
+  /* ---------- who we are ---------- */
+  .who-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:center; }
+  .who-photo{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:32px; }
+  .who-copy p{ font-size:15.5px; line-height:1.75; color:#3F4D68; margin:0 0 16px; }
+  .mv-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:28px; }
+  .mv-card{ background:var(--sky-pale); border-radius:18px; padding:22px 22px; }
+  .mv-card .eyebrow{ margin-bottom:8px; }
+  .mv-card p{ font-size:13.5px; line-height:1.6; color:#3F4D68; margin:0; }
+  .who-owner{
+    margin-top:26px; display:flex; align-items:center; gap:12px;
+    font-size:13px; color:var(--navy); font-weight:600;
+  }
+  .who-owner .dot{ width:7px; height:7px; border-radius:50%; background:var(--sky-deep); }
+
+  /* ---------- what we do ---------- */
+  .services{ background:var(--navy); color:#fff; position:relative; overflow:hidden; }
+  .services .section-head h2{ color:#fff; }
+  .services .section-head .lede{ color:rgba(255,255,255,0.68); }
+  .services .eyebrow{ color:var(--sky); }
+  .svc-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; position:relative; z-index:1; }
+  .svc-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:22px;
+    padding:28px 24px;
+  }
+  .svc-card .spark-ic{ font-size:22px; color:var(--sky); margin-bottom:16px; display:block; }
+  .svc-card h3{ font-size:19px; color:#fff; margin-bottom:12px; }
+  .svc-card ul{ list-style:none; margin:0; padding:0; font-size:13px; line-height:1.9; color:rgba(255,255,255,0.72); }
+  .svc-card ul li{ padding-left:16px; position:relative; }
+  .svc-card ul li::before{ content:"✦"; position:absolute; left:0; top:1px; color:var(--sky); font-size:10px; }
+
+  /* ---------- gallery ---------- */
+  .gallery{ background:var(--paper); }
+  .carousel-wrap{ position:relative; }
+  .carousel{
+    display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:4px 32px 10px; margin:0 -32px; scrollbar-width:none;
+  }
+  .carousel::-webkit-scrollbar{ display:none; }
+  .carousel figure{ margin:0; flex:0 0 auto; width:300px; scroll-snap-align:start; }
+  .carousel .cframe{ width:300px; height:360px; border-radius:26px; overflow:hidden; background:var(--paper-dim); }
+  .carousel img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .carousel figure:hover img{ transform:scale(1.06); }
+  .carousel-controls{ display:flex; justify-content:flex-end; gap:12px; margin-top:22px; }
+  .cbtn{
+    width:46px; height:46px; border-radius:50%;
+    border:1px solid var(--line); background:var(--paper-dim); color:var(--navy);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease, color .2s ease;
+  }
+  .cbtn:hover{ background:var(--sky); color:#fff; }
+
+  /* ---------- why work with us ---------- */
+  .why{ background:var(--sky-pale); }
+  .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+  .why-list{ list-style:none; margin:0; padding:0; }
+  .why-list li{
+    display:flex; gap:16px; align-items:flex-start;
+    padding:17px 0; border-bottom:1px solid rgba(19,48,92,0.1);
+  }
+  .why-list li:last-child{ border-bottom:none; }
+  .why-check{
+    flex:0 0 auto; width:28px; height:28px; border-radius:50%;
+    background:linear-gradient(135deg, var(--sky), var(--sky-deep));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:13px; margin-top:1px;
+  }
+  .why-list span.txt{ font-size:15.5px; font-weight:600; color:var(--navy); padding-top:4px; }
+
+  .why-panel{
+    background:var(--navy); color:#fff;
+    border-radius:28px;
+    padding:44px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .why-panel .quote-mark{ font-family:'Baloo 2',sans-serif; font-size:60px; color:var(--sky); line-height:0.5; display:block; margin-bottom:14px; }
+  .why-panel blockquote{ margin:0 0 22px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:23px; line-height:1.3; position:relative; z-index:1; }
+  .why-panel .attrib{ font-size:13px; color:rgba(255,255,255,0.62); font-weight:600; position:relative; z-index:1; }
+  .why-stats{
+    margin-top:30px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.18);
+    display:grid; grid-template-columns:1fr 1fr; gap:18px; position:relative; z-index:1;
+  }
+  .why-stats .num{ font-family:'Baloo 2',sans-serif; font-size:32px; color:var(--sky); }
+  .why-stats .lbl{ font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.6); font-weight:700; }
+
+  /* ---------- location ---------- */
+  .location{ background:var(--paper); }
+  .loc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .loc-info{
+    background:var(--paper-dim); border-radius:28px; padding:50px 44px;
+    display:flex; flex-direction:column; justify-content:center; gap:26px;
+  }
+  .loc-info h2{ font-size:clamp(28px,3.4vw,40px); }
+  .loc-addr{ font-size:15px; line-height:1.7; color:#3F4D68; }
+  .contact-buttons{ display:flex; flex-direction:column; gap:11px; }
+  .contact-row{
+    display:flex; align-items:center; gap:15px;
+    padding:15px 17px; border-radius:16px; background:#fff;
+    text-decoration:none; color:var(--navy);
+    transition:background .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .contact-row:hover{ background:var(--sky-pale); transform:translateX(4px); box-shadow:0 10px 24px -14px rgba(19,48,92,0.25); }
+  .contact-row .ic{
+    flex:0 0 auto; width:38px; height:38px; border-radius:50%;
+    background:linear-gradient(135deg, var(--sky), var(--sky-deep)); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .contact-row .txt .lbl{
+    font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700;
+    color:#8A97AC; display:block; margin-bottom:3px;
+  }
+  .contact-row .txt .val{ font-size:15px; font-weight:700; }
+  .loc-map{ position:relative; min-height:420px; border-radius:28px; overflow:hidden; }
+  .loc-map iframe{ width:100%; height:100%; min-height:420px; border:0; display:block; }
+  .loc-map-tag{
+    position:absolute; top:18px; left:18px;
+    background:var(--navy); color:#fff;
+    font-size:11.5px; letter-spacing:0.04em; font-weight:700;
+    padding:8px 14px; border-radius:999px; z-index:5;
+    display:flex; align-items:center; gap:7px;
+  }
+  .loc-map-tag::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--sky); }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    background:linear-gradient(120deg, var(--navy), var(--navy-deep));
+    color:#fff; text-align:center; padding:92px 32px; position:relative; overflow:hidden;
+  }
+  .final-cta h2{ color:#fff; font-size:clamp(32px,5.4vw,56px); max-width:16ch; margin:0 auto 18px; }
+  .final-cta p{ font-size:15.5px; color:rgba(255,255,255,0.72); max-width:460px; margin:0 auto 32px; line-height:1.6; }
+  .final-cta .hero-actions{ justify-content:center; margin-bottom:0; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.6); padding:50px 0 24px; }
+  .foot-top{
+    display:flex; justify-content:space-between; gap:36px; flex-wrap:wrap;
+    padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.12); margin-bottom:22px;
+  }
+  .foot-brand{ display:flex; align-items:center; gap:11px; }
+  .foot-brand .brand-word{ color:#fff; }
+  .foot-tagline{ font-family:'Caveat',cursive; font-weight:700; font-size:24px; color:var(--sky); max-width:300px; margin-top:12px; }
+  .foot-links{ display:flex; gap:52px; flex-wrap:wrap; }
+  .foot-col .mono{ font-size:11px; color:var(--sky); display:block; margin-bottom:12px; text-transform:uppercase; font-weight:700; letter-spacing:0.05em; }
+  .foot-col a, .foot-col span{ display:block; font-size:13.5px; color:rgba(255,255,255,0.65); text-decoration:none; margin-bottom:9px; }
+  .foot-col a:hover{ color:#fff; }
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:11.5px; color:rgba(255,255,255,0.35);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .hero-grid, .who-grid, .loc-grid, .why-grid{ grid-template-columns:1fr; }
+    .value-row{ grid-template-columns:1fr; }
+    .svc-grid{ grid-template-columns:repeat(2,1fr); }
+    .mv-grid{ grid-template-columns:1fr; }
+    .hero-photo-wrap{ max-width:400px; margin:0 auto; }
+  }
+  @media (max-width:760px){
+    nav.links{ display:none; }
+    .nav-cta .btn-outline{ display:none; }
+    .svc-grid{ grid-template-columns:1fr; }
+    .section-pad{ padding:66px 0; }
+    .loc-info{ padding:36px 26px; }
+    .foot-top{ flex-direction:column; }
+    .why-panel{ padding:32px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-logo-tag"><!-- LOGO SLOT --><img src="images/logo.png" alt="Araujo's Cleaning Services LLC logo"></span>
+      <span class="brand-word">ARAUJO'S CLEANING<span class="sub">Denver, CO</span></span>
+    </a>
+    <nav class="links">
+      <a href="#who">Who We Are</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#why">Why Us</a>
+      <a href="#location">Location</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="mailto:araujoscleanings@gmail.com" class="btn btn-outline">Email</a>
+      <a href="tel:+17206149438" class="btn btn-sky">Call Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <span class="blob blob-1"></span>
+  <span class="blob blob-2"></span>
+  <span class="blob blob-3"></span>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="spark">✦</span> Residential &amp; Commercial Cleaning</div>
+      <h1 class="hero-h">Professional cleaning, <span class="accent">in every detail.</span></h1>
+      <p class="hero-sub">Araujo's Cleaning Services LLC keeps homes and businesses across Denver clean, fresh, organized, and welcoming — with a team that treats every property with care.</p>
+      <div class="hero-actions">
+        <a href="tel:+17206149438" class="btn btn-sky">Call (720) 614-9438</a>
+        <a href="mailto:araujoscleanings@gmail.com" class="btn btn-outline">Email Our Team</a>
+      </div>
+      <div class="hero-meta">
+        <span>Owners — <strong>Ana Santos &amp; Antonio Araújo</strong></span>
+        <span>Denver, <strong>CO</strong></span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="blob-mask" src="images/hero-main.jpg" alt="Commercial space cleaned by Araujo's Cleaning Services">
+      <div class="sparkle-badge"><span class="sb-inner"><span class="sb-ic">✦</span><span class="sb-txt">Detail<br>Focused</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE STRIP ============ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="value-row">
+      <div class="value-card">
+        <div class="v-ic">✦</div>
+        <h3>Detail-Oriented</h3>
+        <p>Dependable, detail-oriented cleaning built around comfort, organization, and peace of mind.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-ic">🏢</div>
+        <h3>Res. &amp; Commercial</h3>
+        <p>From single-family homes to offices, daycares, and dance academies — every property, every time.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-ic">🤝</div>
+        <h3>Dependable Service</h3>
+        <p>Service adapted to each customer's specific needs, with consistent results you can count on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO WE ARE ============ -->
+<section class="who section-pad" id="who">
+  <div class="wrap">
+    <div class="who-grid">
+      <img class="who-photo" src="images/who.jpg" alt="Residential space cleaned by Araujo's Cleaning Services LLC">
+      <div class="who-copy">
+        <div class="eyebrow"><span class="spark">✦</span> Who We Are</div>
+        <h2 style="font-size:clamp(28px,3.6vw,42px); margin-bottom:20px;">A clean space, a clearer day.</h2>
+        <p>Araujo's Cleaning Services LLC was created to provide customers with dependable, detail-oriented cleaning. Led by <strong>Ana Carina Santos Castañeda</strong> and <strong>Antonio José Araújo Barrios</strong>, the company is built around the belief that a clean space contributes to comfort, organization, productivity, and peace of mind.</p>
+        <p>Our approach is centered on treating every property with care and adapting service to each customer's specific needs — from everyday cleaning to more detailed cleaning projects, with consistent results every time.</p>
+        <div class="mv-grid">
+          <div class="mv-card">
+            <div class="eyebrow" style="margin-bottom:6px;"><span class="spark">✦</span>Our Commitment</div>
+            <p>Reliable, professional cleaning with attention to detail, consistency, and respect for every property we serve.</p>
+          </div>
+          <div class="mv-card">
+            <div class="eyebrow" style="margin-bottom:6px;"><span class="spark">✦</span>Our Future</div>
+            <p>To grow as a trusted cleaning company in the Denver area, known for professionalism and dependable service.</p>
+          </div>
+        </div>
+        <div class="who-owner"><span class="dot"></span>Ana Santos &amp; Antonio Araújo — Owners, Araujo's Cleaning Services LLC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="services section-pad" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="spark">✦</span> What We Do</div>
+        <h2>Four kinds of clean.<br>One standard.</h2>
+      </div>
+      <p class="lede">From a weekly tidy-up to a full post-construction refresh — all handled by the same detail-focused crew.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <span class="spark-ic">✦</span>
+        <h3>Cleaning Services</h3>
+        <ul>
+          <li>Residential cleaning</li>
+          <li>Commercial cleaning</li>
+          <li>Restaurant cleaning</li>
+          <li>Deep &amp; post-construction cleaning</li>
+          <li>Office &amp; sanitizing services</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <span class="spark-ic">✦</span>
+        <h3>Post-Construction</h3>
+        <ul>
+          <li>Post-construction cleanup</li>
+          <li>Dust &amp; debris removal</li>
+          <li>Surface cleaning</li>
+          <li>Final cleaning before occupancy</li>
+          <li>Property preparation</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <span class="spark-ic">✦</span>
+        <h3>Commercial Cleaning</h3>
+        <ul>
+          <li>Office &amp; business facilities</li>
+          <li>Daycare &amp; childcare facilities</li>
+          <li>Dance academies</li>
+          <li>Workshop &amp; shop offices</li>
+          <li>Commercial buildings</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <span class="spark-ic">✦</span>
+        <h3>Deep Cleaning</h3>
+        <ul>
+          <li>Detailed surface cleaning</li>
+          <li>Kitchen &amp; bathroom deep clean</li>
+          <li>Dust &amp; buildup removal</li>
+          <li>Hard-to-reach areas</li>
+          <li>Comprehensive property refresh</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery section-pad" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="spark">✦</span> Work In Process &amp; Completed</div>
+        <h2>See the difference<br>we make.</h2>
+      </div>
+      <p class="lede">A working record pulled straight from our crew's site photos — before and after.</p>
+    </div>
+  </div>
+  <div class="wrap carousel-wrap">
+    <div class="carousel" id="carousel">
+      <figure><div class="cframe"><img src="images/gal-01.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-02.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-03.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-04.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-05.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-06.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-07.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-08.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-09.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-10.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-11.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-12.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-13.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-14.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-15.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+      <figure><div class="cframe"><img src="images/gal-16.jpg" alt="Araujo's Cleaning Services project photo"></div></figure>
+    </div>
+    <div class="carousel-controls">
+      <button class="cbtn" id="prevBtn" aria-label="Previous images">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="cbtn" id="nextBtn" aria-label="Next images">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WORK WITH US ============ -->
+<section class="why section-pad" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="spark">✦</span> Why Work With Us</div>
+        <h2>Five reasons clients<br>keep us on call.</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <ul class="why-list">
+        <li><span class="why-check">✓</span><span class="txt">Strong commercial cleaning focus</span></li>
+        <li><span class="why-check">✓</span><span class="txt">Janitorial experience</span></li>
+        <li><span class="why-check">✓</span><span class="txt">Facility maintenance experience</span></li>
+        <li><span class="why-check">✓</span><span class="txt">Residential and commercial services</span></li>
+        <li><span class="why-check">✓</span><span class="txt">Specialized floor care</span></li>
+      </ul>
+      <div class="why-panel">
+        <span class="quote-mark">"</span>
+        <blockquote>A clean space contributes to comfort, organization, productivity, and peace of mind.</blockquote>
+        <div class="attrib">— Ana Santos &amp; Antonio Araújo, Owners</div>
+        <div class="why-stats">
+          <div><div class="num">4</div><div class="lbl">Service Lines</div></div>
+          <div><div class="num">100%</div><div class="lbl">Detail-Focused</div></div>
+          <div><div class="num">Res.</div><div class="lbl">&amp; Commercial</div></div>
+          <div><div class="num">CO</div><div class="lbl">Denver Area</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="location section-pad" id="location">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="loc-info">
+        <div class="eyebrow"><span class="spark">✦</span> Find Us</div>
+        <h2>Based in Denver.<br>Cleaning the metro area.</h2>
+        <p class="loc-addr">2403 Glenarm Pl.<br>Denver, CO 80205</p>
+        <div class="contact-buttons">
+          <a class="contact-row" href="tel:+17206149438">
+            <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span class="txt"><span class="lbl">Call — Primary</span><span class="val">(720) 614-9438</span></span>
+          </a>
+          <a class="contact-row" href="tel:+13038071613">
+            <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span class="txt"><span class="lbl">Call — Alternate</span><span class="val">(303) 807-1613</span></span>
+          </a>
+          <a class="contact-row" href="mailto:araujoscleanings@gmail.com">
+            <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></span>
+            <span class="txt"><span class="lbl">Send an email</span><span class="val">araujoscleanings@gmail.com</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="loc-map">
+        <div class="loc-map-tag">Denver, CO</div>
+        <iframe
+          title="Araujo's Cleaning Services LLC — service area map, Denver, CO"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-105.0020%2C39.7410%2C-104.9590%2C39.7620&layer=mapnik&marker=39.7516%2C-104.9806"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="eyebrow" style="justify-content:center; color:var(--sky);"><span class="spark">✦</span> Ready When You Are</div>
+  <h2>Let's get your space spotless.</h2>
+  <p>Call or email Ana and Antonio directly to schedule residential or commercial cleaning.</p>
+  <div class="hero-actions">
+    <a href="tel:+17206149438" class="btn btn-white">Call (720) 614-9438</a>
+    <a href="mailto:araujoscleanings@gmail.com" class="btn btn-outline-light">araujoscleanings@gmail.com</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-logo-tag"><img src="images/logo.png" alt="Araujo's Cleaning Services LLC logo"></span>
+          <span class="brand-word">ARAUJO'S CLEANING<span class="sub">Denver, CO</span></span>
+        </div>
+        <p class="foot-tagline">Professional Cleaning in Every Detail</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <span class="mono">Company</span>
+          <a href="#who">Who We Are</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#why">Why Us</a>
+        </div>
+        <div class="foot-col">
+          <span class="mono">Contact</span>
+          <a href="tel:+17206149438">(720) 614-9438</a>
+          <a href="tel:+13038071613">(303) 807-1613</a>
+          <a href="mailto:araujoscleanings@gmail.com">araujoscleanings@gmail.com</a>
+          <span>2403 Glenarm Pl.</span>
+          <span>Denver, CO 80205</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Araujo's Cleaning Services LLC — All rights reserved.</span>
+      <span>Owners — Ana Santos &amp; Antonio Araújo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  function scrollAmount(){
+    const card = carousel.querySelector('figure');
+    return card ? card.getBoundingClientRect().width + 16 : 300;
+  }
+  prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount()*2, behavior: 'smooth' }));
+  nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount()*2, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
